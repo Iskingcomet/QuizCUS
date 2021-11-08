@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+ * {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    font-size: 24px;
+    font-family: 'Raleway';
+
+}
+
+.btn1
+{
+    
+        background-color: green;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      
+      .btnsz{
+        font-size: 24px;
+      }
+
+      .glowbutton:hover {
+        color: white;
+        box-shadow : 0 5px 15px green;
+      }
+
+      .btn-primary{
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .glowtru:hover {
+        color: white;
+        box-shadow : 0 5px 15px blue;
+      }
+
+      .btn-danger{
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .glowfal:hover {
+        color: white;
+        box-shadow : 0 5px 15px red;
+      }
+
+      .btn-group .button:not(:last-child) {
+        border-right: none; /* Prevent double borders */
+      }
+      
+      .btn-group .btnMul{
+        border-right: none;
+      }
+      
+      .btn1-1 .btnMul{
+        
+        background-color: green;
+        border: 1px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        float:left;
+      }
+
+      #Timer{
+        margin-top: 50px;
+        margin-left: 25px;
+        border-radius: 8pt;
+        color: white;
+        background-color: gray;
+        max-width: 300px;
+        text-align: center;
+        padding: 15px;
+        min-width: 20%;
+        border: 5px black solid;
+      }
+      .FeedbackGood{
+        color:green;
+        font-weight: bold;
+      }
+      
+      .FeedbackBad{
+        color: red;
+      }
