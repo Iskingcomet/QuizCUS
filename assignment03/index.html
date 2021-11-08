@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script src="Quiz1_.js"> </script>
+    <link rel="stylesheet" href="Quiz.css">
+
+    <title>CUS QUIZ APP </title>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Computer Science Quiz</a>
+      </div>
+    </nav>
+    <div id="Timer">
+      <span>Time Elapsed:</span>
+      <span id="minutes">00</span>:<span id="seconds">00</span>
+</div>
+    <div id="widget_view" style="margin:50px">
+
+    </div>
+  </body>
+  <script id="intro_view" type="text/x-handlebars-template">
+    <div class="container">
+      <div class="row">
+          <div class="col">
+            <div>
+            <input type="text" id="userName" name="fname" placeholder="Enter Your Name:"><br>            
+              <button class="btn btnsz btn1 glowbutton float-right" data-action="{{this.action}}">{{this.action}}</button>
+              <input type="radio" id="quiz_one" name="quiz_Name" value="quiz_one"required>   
+                    <label for="quiz_one">Quiz 1</label>                
+            </div>
+          </div>
+        </div>
+      </div>
+  </script>
+
+  <script id="question_view_true_false" type="text/x-handlebars-template">
+    <div class="container">
+        <div class="scoreRow">
+            <div class="col">
+              <p>Questions Answered: <span id="correctCount"></span> || Current Score: <span id="incorrectCount"></span>%</p>
+              </div>
+          </div> 
+      <div class="row">
+          <div class="col">
+            <div>
+              <span style="text-align:center"> {{this.questionText}}</span>
+              <br> 
+              <br>
+              <button class="btn btn-primary glowtru pull-left" data-action="answer" data-answer="{{this.options.[0]}}">{{this.options.[0]}}</button>
+              <button class="btn btn-danger glowfal float-right" data-action="answer" data-answer="{{this.options.[1]}}">{{this.options.[1]}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </script>
+
+  <script id="question_view_multiple_choice" type="text/x-handlebars-template">
+    <div class="container">
+      <div class="scoreRow">
+          <div class="col">
+            <p>Questions Answered: <span id="correctCount"></span> || Current Score: <span id="incorrectCount"></span>%</p>
+            </div>
+        </div> 
+            <div class ="row">
+                <div class="col">
+                <div>
+              <span style="text-align:center"> {{this.questionText}}</span>
+              <br>
+              <br>
+              <button class="btn btn1 btnsz btMul glowbutton" data-action="answer" data-answer="{{this.options.[0]}}" value="{{this.options.[0]}}" name="choice" >{{this.options.[0]}}</button>
+              <button class="btn  btn1 btnsz btMul glowbutton" data-action="answer" data-answer="{{this.options.[1]}}"value="{{this.options.[1]}}" name="choice" >{{this.options.[1]}}</button>
+              <button class="btn btn1 btnsz btMul glowbutton" data-action="answer" data-answer="{{this.options.[2]}}"value="{{this.options.[2]}}" name="choice" >{{this.options.[2]}}</button>
+              <button class="btn btn1 btnsz btMul glowbutton" data-action="answer" data-answer="{{this.options.[3]}}"value="{{this.options.[3]}}" name="choice" >{{this.options.[3]}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </script>
+
+  <script id="question_view_text_input" type="text/x-handlebars-template">
+    <div class="container">
+        <div class="scoreRow">
+            <div class="col">
+              <p>Questions Answered: <span id="correctCount"></span> || Current Score: <span id="incorrectCount"></span>%</p>
+              </div>
+          </div> 
+      <div class="row">
+          <div class="col">
+            <div>
+              <span style="text-align:center"> {{this.questionText}} </span>
+              <input type="text" id="{{this.answerFieldId}}" name="answer"><br><br>
+              <button class="btn btn-danger glowfal float-right" data-action="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </script>
+
+  <script id="feedback_view_positive" type="text/x-handlebars-template">
+    <div class="container">
+      <div class="row">
+          <div class="col">
+            <div>
+              <span class="FeedbackGood" id="feedback">Correct Keep Going!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </script>
+
+<script id="feedback_view_negative" type="text/x-handlebars-template">
+    <div class="container">
+      <div class="row">
+          <div class="col">
+            <div>
+              <span class="FeedbackBad" id="feedback">That's Too Bad Keep Trying</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </script>
+
+
+  <script id="end_view" type="text/x-handlebars-template">
+      <div class="container">
+        <div class="row">
+            <div class="col">
+              <div>
+                <span id=endMessage></span><br>
+                <button class="btn btn1 float-right" data-action="start_again">Start Again</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </script>
+</html>
